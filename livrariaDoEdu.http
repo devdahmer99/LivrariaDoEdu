@@ -1,0 +1,6 @@
+@livrariaDoEdu_HostAddress = http://localhost:5262
+
+GET {{livrariaDoEdu_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
