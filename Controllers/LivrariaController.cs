@@ -34,17 +34,8 @@ public class LivrariaController : ControllerBase
     {
         try
         {
-           var livros =  _livrariaDbContext.Livros.FirstOrDefault();
-            var retornoLivros = new ResponseLivroJson
-            {
-                Titulo = livros.Titulo,
-                Autor = livros.Autor,
-                Genero = livros.Genero,
-                QtdEstoque = livros.QuantidadeEstoque,
-                PrecoLivro = livros.PrecoProduto
-            };
-
-           return Ok(retornoLivros);
+           var livros =  _livrariaDbContext.Livros.ToList();
+           return Ok(livros);
 
         } catch(Exception e)
         {
